@@ -1,5 +1,8 @@
 #! /bin/bash
 
+#clean environment
+rm -rf "$HOME/.bash*"
+rm -rf "$HOME/.vim*"
 
 ####  Bash
 path=`pwd .`
