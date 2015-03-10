@@ -1,0 +1,63 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
+# Initialize environment for both login and non-login-sheels
+[ -f ~/.bash_environment ] && source ~/.bash_environment
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+export HISTSIZE=8000
+# allow append history
+shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
+# Alias definitions.
+
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+# [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# custom prompt
+#_PROMPT_PREFIX="${debian_chroot:+($debian_chroot)}${YROOT_PROMPT}"
+_UH_COLOR="\[\033[1;$(expr $RANDOM % 6 + 31)m\]"
+_UH_UNDERLINE="\[\033[0;4m\]"
+_UH_NONE="\[\033[0m\]";
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PROMPT_COMMAND='echo -ne "\033]0;${BASH_TITLE-${USER}@${HOSTNAME}} \007"'
+#    ;;
+#screen)
+#    PROMPT_COMMAND='echo -ne "\033k${BASH_TITLE-${USER}@${HOSTNAME}} \033\\"'
+#	FLAGS='s'
+#	;;
+#*)
+#    ;;
+#esac
+PS1="[$_UH_COLOR\u@\h $_UH_UNDERLINE\w$_UH_NONE]\$ "
+#eval "$PROMPT_COMMAND"
+unset _UH_COLOR _UH_UNDERLINE _UH_NONE
+
+# reattach ssh agent if exists
+[ -f ~/.ssh/id_rsa ] && eval $(ssh-attach 2>/dev/null)
+
+# display sync message
+[ -f ~/.lastprofile ] && cat ~/.lastprofile
+
+# include local settings
+[ -f ~/.bash_local ] && source ~/.bash_local

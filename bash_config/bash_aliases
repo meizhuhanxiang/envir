@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# Test if vim installed
+[ -n "`which vim 2>/dev/null`" ] && alias vi='vim -O'
+
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ];then
+	case "$(uname)" in
+		Linux)
+			which dircolors > /dev/null && eval "`dircolors -b`"
+			alias ls='ls --color=auto'
+		;;
+		FreeBSD|Darwin)
+			export LSCOLORS='ExGxcxdxCxegedabagacad'
+			alias ls='ls -G'
+		;;
+	esac
+fi
+
+# enable color support for grep
+alias grep='grep --color=auto'
+
+# handy command
+alias ll='ls -alrtk'
+alias la='ls -AksS'
+alias l='ll'
+
+alias vis='sudo vim'
+alias vip='vim -p'
+
+alias 'ps?'='ps aux | grep'
+
+# alias for ito
+alias 'find?'='find . -path "*/.svn" -prune -o -type f | grep -v ".svn" | grep -i'
+alias 'grep?'='find . -path "*/.svn" -prune -o -type f -print | xargs grep -li'
+#alias todo='vim /Users/ito/workspace/todo.txt'
+
+# alias for git
+alias gst='git st'
+alias gl='git l'
+
+alias gorun="go run"
+alias gofmt="go fmt"
+alias got="go test"
+
+alias py="python"

@@ -1,0 +1,21 @@
+[ -f ~/.bashrc ] && source ~/.bashrc
+
+#export LD_LIBRARY_PATH=/usr/local/lib
+#export LD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+##
+# Your previous /Users/ito/.bash_profile file was backed up as /Users/ito/.bash_profile.macports-saved_2013-12-03_at_12:04:44
+##
+
+export PATH=~/bin:$PATH
+
+export GOPATH=/Users/ito/workspace/:$GOPATH
+
+##
+# Your previous /Users/ito/.bash_profile file was backed up as /Users/ito/.bash_profile.macports-saved_2014-10-20_at_17:05:32
+##
+
+# MacPorts Installer addition on 2014-10-20_at_17:05:32: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

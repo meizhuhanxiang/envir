@@ -1,0 +1,39 @@
+#!/bin/sh
+OS="`uname`"
+
+PAGER="less -r"
+EDITOR=vim
+SVN_EDITOR=$EDITOR
+NNTPSERVER=news.cn99.com
+CVS_RSH=ssh
+CPPLINT_FILTER=-whitespace/braces,-legal/copyright
+NODERC=~/local/etc/noderc
+
+LC_ALL=C LANG=C LANGUAGE=C
+#locale -a 2>/dev/null | grep -e 'zh_CN\.\(utf8\|UTF-8\)' >/dev/null && LC_ALL=zh_CN.UTF-8 
+locale -a 2>/dev/null | grep -e 'en_US\.\(utf8\|UTF-8\)' >/dev/null && LC_ALL=en_US.UTF-8
+locale -a 2>/dev/null | grep -e 'en_US\.\(utf8\|UTF-8\)' >/dev/null && LANG=en_US.UTF-8 LANGUAGE=en_US
+TZ=Asia/Shanghai
+
+# Find Path
+PATH_EXPR=(
+	$HOME/local/{bin,sbin}
+)
+for EXPR in ${PATH_EXPR[@]}
+do
+	 for DIR in $EXPR
+	 do
+	 	[ -d "$DIR" ] && PATH=$DIR:$PATH
+	 done
+done
+
+PATH=/Users/ito/workspace:/usr/sbin:$PATH
+#PATH=/Users/ito/workspace:/opt/local/ringo/bin:/opt/local/ant/bin:/usr/sbin:$PATH
+
+# postgresql stuff
+PGCLIENTENCODING=UTF-8
+
+export LC_ALL LANG LANGUAGE PATH PAGER EDITOR SVN_EDITOR
+export PGCLIENTENCODING CVS_RSH TZ CPPLINT_FILTER NODERC
+
+export PYTHONDONTWRITEBYTECODE=x
