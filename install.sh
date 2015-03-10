@@ -6,7 +6,7 @@ path=`pwd .`
 for file in bash/*; do
   basefile=`basename $file`
   #echo "$HOME/.$file"
-  ln -sf "$path/$file" "$HOME/.$basename"
+  ln -sf "$path/$file" "$HOME/.$basefile"
 done
 
 #### Vim
