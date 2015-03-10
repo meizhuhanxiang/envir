@@ -27,8 +27,7 @@ do
 	 done
 done
 
-PATH=/Users/ito/workspace:/usr/sbin:$PATH
-#PATH=/Users/ito/workspace:/opt/local/ringo/bin:/opt/local/ant/bin:/usr/sbin:$PATH
+PATH=$HOME/workspace:/usr/sbin:$PATH
 
 # postgresql stuff
 PGCLIENTENCODING=UTF-8

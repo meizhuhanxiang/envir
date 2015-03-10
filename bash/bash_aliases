@@ -30,10 +30,8 @@ alias vip='vim -p'
 
 alias 'ps?'='ps aux | grep'
 
-# alias for ito
 alias 'find?'='find . -path "*/.svn" -prune -o -type f | grep -v ".svn" | grep -i'
 alias 'grep?'='find . -path "*/.svn" -prune -o -type f -print | xargs grep -li'
-#alias todo='vim /Users/ito/workspace/todo.txt'
 
 # alias for git
 alias gst='git st'
