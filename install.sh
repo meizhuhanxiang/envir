@@ -15,3 +15,6 @@ done
 #### Vim
 ln -sf "$path/vimrc" "$HOME/.vimrc"
 ln -sf "$path/vim" "$HOME/.vim"
+
+#### Git
+ln -sf "$path/gitignoreglobal" "$HOME/.gitignoreglobal"
