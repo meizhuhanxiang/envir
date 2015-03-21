@@ -15,3 +15,5 @@ done
 #### Vim
 ln -sf "$path/vimrc" "$HOME/.vimrc"
 ln -sf "$path/vim" "$HOME/.vim"
+
+bash
