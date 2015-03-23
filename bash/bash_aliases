@@ -35,7 +35,14 @@ alias 'grep?'='find . -path "*/.svn" -prune -o -type f -print | xargs grep -li'
 
 # alias for git
 alias gst='git st'
-alias gl='git l'
+alias gadd='git add'
+alias gremove='git remove'
+alias gci='git ci'
+alias gdiff='git diff'
+alias gpull='git pull'
+alias gpush='git push'
+alias glog='git log'
+alias gshow='git show'
 
 alias gorun="go run"
 alias gofmt="go fmt"
