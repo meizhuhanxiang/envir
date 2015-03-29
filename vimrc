@@ -138,8 +138,11 @@ map <S-Right> :tabn<CR>
 
 au FileType php setlocal dict+=~/.vim/php_funclist.txt
 
-autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
+"autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt>
+
+au BufRead,BufNewFile *.hbs setlocal filetype=javascript
+let javascript_enable_domhtmlcss=1
 
 " php 语法检查
 map <C-c> :!/usr/bin/php -l %<CR>
